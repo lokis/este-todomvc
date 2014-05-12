@@ -1,0 +1,14 @@
+{
+  "name": "este-todomvc",
+  "version": "0.0.0",
+  "homepage": "https://github.com/steida/este-todomvc",
+  "authors": [
+    "Daniel Steigerwald <daniel@steigerwald.cz>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "este-library": "git://github.com/steida/este-library.git#~6.5.0",
+    "todomvc-common": "~0.1.4"
+  }
+}

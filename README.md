@@ -1,5 +1,8 @@
 # Framework Este.js TodoMVC Example
 
+[![Build Status](https://secure.travis-ci.org/steida/este-todomvc.png?branch=master)](http://travis-ci.org/steida/este-todomvc) [![Dependency Status](https://david-dm.org/steida/este-todomvc.png)](https://david-dm.org/steida/este-todomvc) [![devDependency Status](https://david-dm.org/steida/este-todomvc/dev-status.png)](https://david-dm.org/steida/este-todomvc#info=devDependencies)
+
+
 > Robust and comfortable dev stack for isomorphic web apps.
 
 > _[Este.js](https://github.com/steida/este)_

@@ -1,7 +1,6 @@
 gulp = require 'gulp'
 
 GulpEste = require 'gulp-este'
-express = require 'express'
 rimraf = require 'rimraf'
 runSequence = require 'run-sequence'
 yargs = require 'yargs'
@@ -115,10 +114,7 @@ gulp.task 'watch', ->
     jsx: 'jsx'
   , (task) -> gulp.start task
 
-gulp.task 'server', ->
-  app = express()
-  app.use express.static '.'
-  app.listen 8000
+gulp.task 'server', este.bg 'node', ['server']
 
 gulp.task 'run', (done) ->
   runSequence [

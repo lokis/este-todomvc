@@ -1,10 +1,11 @@
 {
   "name": "este-todomvc",
-  "version": "0.0.0",
+  "version": "0.0.0-3",
   "description": "este-todomvc ============",
   "main": "index.js",
   "private": true,
   "scripts": {
+    "start": "node server",
     "test": "gulp build --production"
   },
   "repository": {
@@ -12,18 +13,24 @@
     "url": "https://github.com/steida/este-todomvc.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/steida/este-todomvc/issues"
   },
   "homepage": "https://github.com/steida/este-todomvc",
+  "dependencies": {
+    "express": "^4.1.0"
+  },
   "devDependencies": {
     "coffee-script": "^1.7.1",
-    "express": "^4.1.0",
     "gulp": "^3.6.2",
     "gulp-este": "^0.5.2",
     "rimraf": "^2.2.8",
     "run-sequence": "^0.3.6",
     "yargs": "^1.2.1"
-  }
+  },
+  "engines": {
+    "node": "v0.10.x"
+  },
+  "subdomain": "steida-este-todomvc"
 }

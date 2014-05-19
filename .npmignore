@@ -1,0 +1,6 @@
+bower_components/**/*
+!bower_components/todomvc-common/**/*
+!bower_components/closure-library/**/*
+!bower_components/este-library/**/*
+node_modules/
+src/

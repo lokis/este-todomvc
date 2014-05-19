@@ -1,6 +1,6 @@
 {
   "name": "este-todomvc",
-  "version": "0.0.0-3",
+  "version": "0.1.0",
   "description": "este-todomvc ============",
   "main": "index.js",
   "private": true,

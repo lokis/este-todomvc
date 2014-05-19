@@ -1,11 +1,11 @@
-# Framework Este.js TodoMVC Example
+# Este.js TodoMVC Example
 
 [![Build Status](https://secure.travis-ci.org/steida/este-todomvc.png?branch=master)](http://travis-ci.org/steida/este-todomvc) [![Dependency Status](https://david-dm.org/steida/este-todomvc.png)](https://david-dm.org/steida/este-todomvc) [![devDependency Status](https://david-dm.org/steida/este-todomvc/dev-status.png)](https://david-dm.org/steida/este-todomvc#info=devDependencies)
 
 
 > Robust and comfortable dev stack for isomorphic web apps.
 
-> _[Este.js](https://github.com/steida/este)_
+> [Demo](http://steida-este-todomvc.nodejitsu.com)
 
 ## Learning Este.js
 
@@ -25,11 +25,9 @@ Get help from other Este.js users:
 * [Mailing list on Google Groups](https://groups.google.com/forum/#!forum/estejs)
 * [Este.js on Twitter](http://twitter.com/estejs)
 
-_If you have other helpful links to share, or find any of the links above no longer work, please [let us know](https://github.com/tastejs/todomvc/issues)._
-
 ## Running
 
-The same instructions as here: [github.com/steida/este](https://github.com/steida/este).
+Instructions are here: [github.com/steida/este](https://github.com/steida/este).
 
 ## Credit
 

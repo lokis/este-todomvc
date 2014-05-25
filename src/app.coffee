@@ -16,4 +16,4 @@ class App
     router.add routes.completedTodos, -> routes.setActive routes.completedTodos
     router.start()
 
-    React.renderComponent reactApp.reactClass(), element
+    React.renderComponent reactApp.create(), element

@@ -8,7 +8,7 @@ goog.require('goog.events.KeyCodes');
  */
 app.todos.react.Header = function(store) {
 
-  this.reactClass = React.createClass({
+  this.create = React.createClass({
 
     render: function() {
       return (

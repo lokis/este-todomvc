@@ -10,7 +10,7 @@ goog.require('goog.i18n.pluralRules');
  */
 app.todos.react.Footer = function(store, routes) {
 
-  this.reactClass = React.createClass({displayName: 'reactClass',
+  this.create = React.createClass({displayName: 'create',
 
     render: function() {
       var completedLength = store.completed().length;

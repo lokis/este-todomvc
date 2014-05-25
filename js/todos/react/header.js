@@ -9,7 +9,7 @@ goog.require('goog.events.KeyCodes');
  */
 app.todos.react.Header = function(store) {
 
-  this.reactClass = React.createClass({displayName: 'reactClass',
+  this.create = React.createClass({displayName: 'create',
 
     render: function() {
       return (

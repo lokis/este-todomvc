@@ -7,9 +7,9 @@ goog.provide('app.todos.react.Main');
  * @constructor
  */
 app.todos.react.Main = function(reactTodo, routes, store) {
-  var Todo = reactTodo.reactClass;
+  var Todo = reactTodo.create;
 
-  this.reactClass = React.createClass({
+  this.create = React.createClass({
 
     render: function() {
       return (

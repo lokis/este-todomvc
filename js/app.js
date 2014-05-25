@@ -19,5 +19,5 @@ var App = function(router, routes, reactApp, element) {
     return routes.setActive(routes.completedTodos);
   });
   router.start();
-  React.renderComponent(reactApp.reactClass(), element);
+  React.renderComponent(reactApp.create(), element);
 }

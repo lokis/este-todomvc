@@ -9,11 +9,11 @@ goog.provide('app.todos.react.App');
  * @constructor
  */
 app.todos.react.App = function(store, reactHeader, reactMain, reactFooter) {
-  var Header = reactHeader.reactClass;
-  var Main = reactMain.reactClass;
-  var Footer = reactFooter.reactClass;
+  var Header = reactHeader.create;
+  var Main = reactMain.create;
+  var Footer = reactFooter.create;
 
-  this.reactClass = React.createClass({displayName: 'reactClass',
+  this.create = React.createClass({displayName: 'create',
     render: function() {
       var atLeastOneTodoExists = !!store.all().length
 

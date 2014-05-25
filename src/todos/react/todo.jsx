@@ -8,7 +8,7 @@ goog.require('goog.events.KeyCodes');
  */
 app.todos.react.Todo = function(store) {
 
-  this.reactClass = React.createClass({
+  this.create = React.createClass({
 
     render: function() {
       var cs = window['React']['addons']['classSet'];

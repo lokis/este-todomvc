@@ -25,7 +25,7 @@ app.todos.react.App = function(store, reactHeader, reactMain, reactFooter) {
       );
     },
 
-    componentDidMount: function(e) {
+    componentDidMount: function() {
       store.listen(app.todos.Store.EventType.CHANGE, this.onStoreChange);
     },
 

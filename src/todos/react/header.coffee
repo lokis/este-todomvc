@@ -15,18 +15,17 @@ class app.todos.react.Header
     {header,h1,input} = React.DOM
 
     @create = React.createClass
-
       render: ->
         header id: 'header',
           h1 null, 'todos'
           input
             id: 'new-todo'
-            onKeyDown: this.onNewTodoKeyDown
+            onKeyDown: @onNewTodoKeyDown
             placeholder: 'What needs to be done?'
             ref: 'newTodo'
 
       componentDidMount: ->
-        this.refs['newTodo'].getDOMNode().focus()
+        @refs['newTodo'].getDOMNode().focus()
 
       onNewTodoKeyDown: (e) ->
         return if e.which != goog.events.KeyCodes.ENTER

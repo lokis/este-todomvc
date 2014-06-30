@@ -34,7 +34,7 @@ app.todos.react.Main = function(reactTodo, routes, store) {
     },
 
     getTodosFilteredByUrl: function() {
-      switch(routes.getActive()) {
+      switch(routes.active) {
         case routes.activeTodos:
           return store.remaining();
         case routes.completedTodos:

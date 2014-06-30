@@ -9,11 +9,16 @@ class App
     @param {Element} element
     @constructor
   ###
-  constructor: (router, routes, reactApp, element) ->
-
-    router.add routes.allTodos, -> routes.setActive routes.allTodos
-    router.add routes.activeTodos, -> routes.setActive routes.activeTodos
-    router.add routes.completedTodos, -> routes.setActive routes.completedTodos
+  constructor: (router, routes, @reactApp, @element) ->
+    routes.addToEste router
+    routes.listen este.Routes.EventType.CHANGE, @syncUi.bind @
     router.start()
 
-    React.renderComponent reactApp.create(), element
+  ###*
+    Sync UI with app model.
+  ###
+  syncUi: ->
+    if !@component
+      @component = React.renderComponent @reactApp.create(), @element
+      return
+    @component.forceUpdate()

@@ -8,21 +8,15 @@ goog.require('goog.events.EventTarget');
 /**
   @param {app.todos.Todos} todos
   @param {app.LocalStorage} localStorage
-  @param {app.Routes} routes
   @constructor
   @extends {goog.events.EventTarget}
   @final
  */
-app.todos.Store = function(todos, localStorage, routes) {
+app.todos.Store = function(todos, localStorage) {
   this.todos = todos;
   this.localStorage = localStorage;
   app.todos.Store.superClass_.constructor.call(this);
   this.deserialize_();
-  routes.listen(app.Routes.EventType.CHANGE, (function(_this) {
-    return function() {
-      return _this.notify_();
-    };
-  })(this));
 }
 goog.inherits(app.todos.Store, goog.events.EventTarget);
 

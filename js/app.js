@@ -9,15 +9,20 @@ goog.provide('App');
   @constructor
  */
 var App = function(router, routes, reactApp, element) {
-  router.add(routes.allTodos, function() {
-    return routes.setActive(routes.allTodos);
-  });
-  router.add(routes.activeTodos, function() {
-    return routes.setActive(routes.activeTodos);
-  });
-  router.add(routes.completedTodos, function() {
-    return routes.setActive(routes.completedTodos);
-  });
+  this.reactApp = reactApp;
+  this.element = element;
+  routes.addToEste(router);
+  routes.listen(este.Routes.EventType.CHANGE, this.syncUi.bind(this));
   router.start();
-  React.renderComponent(reactApp.create(), element);
 }
+
+/**
+  Sync UI with app model.
+ */
+App.prototype.syncUi = function() {
+  if (!this.component) {
+    this.component = React.renderComponent(this.reactApp.create(), this.element);
+    return;
+  }
+  return this.component.forceUpdate();
+};

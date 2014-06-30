@@ -54,20 +54,6 @@ app.todos.react.Footer = function(store, routes) {
       );
     },
 
-    componentDidMount: function() {
-      this.enablePointerEvents();
-    },
-
-    // Polymer PointerEvents for fast click on touch devices. React does not
-    // support touch-action attribute, so we have to set it manually.
-    enablePointerEvents: function() {
-      var anchors = this.getDOMNode().querySelectorAll('#filters a');
-      for (var i = 0; i < anchors.length; i++) {
-        // Polymer's special attribute to enable PointerEvents.
-        anchors[i].setAttribute('touch-action', 'none');
-      }
-    },
-
     /**
       @param {number} remainingLength
       @return {string}
@@ -85,7 +71,7 @@ app.todos.react.Footer = function(store, routes) {
     },
 
     getClassName: function(route) {
-      return routes.getActive() == route && 'selected';
+      return routes.active == route && 'selected';
     },
 
     onClearCompletedClick: function(e) {

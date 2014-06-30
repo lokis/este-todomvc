@@ -10,16 +10,13 @@ class app.todos.Store extends goog.events.EventTarget
   ###*
     @param {app.todos.Todos} todos
     @param {app.LocalStorage} localStorage
-    @param {app.Routes} routes
     @constructor
     @extends {goog.events.EventTarget}
     @final
   ###
-  constructor: (@todos, @localStorage, routes) ->
+  constructor: (@todos, @localStorage) ->
     super()
     @deserialize_()
-    routes.listen app.Routes.EventType.CHANGE, =>
-      @notify_()
 
   ###*
     @enum {string}

@@ -2,27 +2,24 @@
 goog.provide('App');
 
 /**
-  @param {este.Router} router
   @param {app.Routes} routes
+  @param {este.Router} router
   @param {app.todos.react.App} reactApp
   @param {Element} element
+  @param {app.todos.Store} store
   @constructor
  */
-var App = function(router, routes, reactApp, element) {
+var App = function(routes, router, reactApp, element, store) {
+  var syncUI;
   this.reactApp = reactApp;
   this.element = element;
-  routes.addToEste(router);
-  routes.listen(este.Routes.EventType.CHANGE, this.syncUi.bind(this));
+  syncUI = function() {
+    return React.renderComponent(reactApp.component(), element);
+  };
+  routes.addToEste(router, function(route, params) {
+    routes.setActive(route, params);
+    return syncUI();
+  });
   router.start();
+  store.listen('change', syncUI);
 }
-
-/**
-  Sync UI with app model.
- */
-App.prototype.syncUi = function() {
-  if (!this.component) {
-    this.component = React.renderComponent(this.reactApp.create(), this.element);
-    return;
-  }
-  return this.component.forceUpdate();
-};

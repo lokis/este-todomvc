@@ -17,25 +17,21 @@ app.todos.Todo = function(title, randomStringGenerator) {
 
 /**
   @type {string}
-  @expose
  */
 app.todos.Todo.prototype.id = '';
 
 /**
   @type {string}
-  @expose
  */
 app.todos.Todo.prototype.title = '';
 
 /**
   @type {boolean}
-  @expose
  */
 app.todos.Todo.prototype.completed = false;
 
 /**
   @type {boolean}
-  @expose
  */
 app.todos.Todo.prototype.editing = false;
 app.todos.Todo.prototype.toggle = function() {

@@ -1,23 +1,19 @@
-###
-  @fileoverview This is example how to use React with CoffeeScript syntax.
-###
 goog.provide 'app.todos.react.Header'
-
-goog.require 'goog.events.KeyCodes'
 
 class app.todos.react.Header
 
   ###*
+    This is example how to use React with plain CoffeeScript syntax.
     @param {app.todos.Store} store
     @constructor
   ###
   constructor: (store) ->
     {header,h1,input} = React.DOM
 
-    @create = React.createClass
+    @component = React.createClass
       render: ->
         header id: 'header',
-          h1 null, 'todos'
+          h1 {}, 'todos'
           input
             id: 'new-todo'
             onKeyDown: @onNewTodoKeyDown
@@ -25,10 +21,10 @@ class app.todos.react.Header
             ref: 'newTodo'
 
       componentDidMount: ->
-        @refs['newTodo'].getDOMNode().focus()
+        @refs.newTodo.getDOMNode().focus()
 
       onNewTodoKeyDown: (e) ->
-        return if e.which != goog.events.KeyCodes.ENTER
+        return if e.key != 'Enter'
         @addTodo e.target
 
       addTodo: (input) ->

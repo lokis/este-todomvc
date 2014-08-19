@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "este-library": "git://github.com/steida/este-library.git",
+    "este-library": "git://github.com/steida/este-library.git#^7.0.0",
     "todomvc-common": "~0.1.4"
   }
 }

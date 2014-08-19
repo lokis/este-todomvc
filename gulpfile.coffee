@@ -31,6 +31,7 @@ paths =
   ]
   compiler: 'bower_components/closure-compiler/compiler.jar'
   externs: [
+    'js/externs.js'
     'bower_components/react-externs/externs.js'
   ]
   concatAll:

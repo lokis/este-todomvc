@@ -1,46 +1,43 @@
 /** @jsx React.DOM */
 goog.provide('app.todos.react.Todo');
 
-goog.require('goog.events.KeyCodes');
-
 /**
  * @param {app.todos.Store} store
  * @constructor
  */
 app.todos.react.Todo = function(store) {
 
-  this.create = React.createClass({displayName: 'create',
+  this.component = React.createClass({displayName: 'component',
 
     render: function() {
-      var cs = window['React']['addons']['classSet'];
       var todo = this.props.todo;
-      var liClassName = cs({
+      var liClassName = React.addons.classSet({
         'editing': todo.editing,
         'completed': todo.completed
       });
 
       return (
-        React.DOM.li( {className:liClassName, key:todo.id}, 
-          React.DOM.div( {className:"view"}, 
-            React.DOM.input(
-              {checked:todo.completed,
-              className:"toggle",
-              onChange:this.onToggleChange.bind(this, todo),
-              type:"checkbox"} ),
-            React.DOM.label(
-              {onDoubleClick:this.onLabelDoubleClick.bind(this, todo)}, 
+        React.DOM.li({className: liClassName, key: todo.id}, 
+          React.DOM.div({className: "view"}, 
+            React.DOM.input({
+              checked: todo.completed, 
+              className: "toggle", 
+              onChange: this.onToggleChange.bind(this, todo), 
+              type: "checkbox"}), 
+            React.DOM.label({
+              onDoubleClick: this.onLabelDoubleClick.bind(this, todo)}, 
               todo.title
-            ),
-            React.DOM.button( {className:"destroy",
-              onClick:this.onDestroyClick.bind(this, todo)}
+            ), 
+            React.DOM.button({className: "destroy", 
+              onClick: this.onDestroyClick.bind(this, todo)}
             )
-          ),
-          React.DOM.input(
-            {className:"edit",
-            defaultValue:todo.title,
-            onBlur:this.onEditBlur.bind(this, todo),
-            onKeyDown:this.onEditKeyDown.bind(this, todo),
-            ref:"edit"}
+          ), 
+          React.DOM.input({
+            className: "edit", 
+            defaultValue: todo.title, 
+            onBlur: this.onEditBlur.bind(this, todo), 
+            onKeyDown: this.onEditKeyDown.bind(this, todo), 
+            ref: "edit"}
           )
         )
       );
@@ -62,7 +59,7 @@ app.todos.react.Todo = function(store) {
     },
 
     focusEdit: function() {
-      this.refs['edit'].getDOMNode().focus();
+      this.refs.edit.getDOMNode().focus();
     },
 
     /**
@@ -83,12 +80,12 @@ app.todos.react.Todo = function(store) {
       @param {app.todos.Todo} todo
     */
     onEditKeyDown: function(todo, e) {
-      switch (e.which) {
-        case goog.events.KeyCodes.ESC:
+      switch (e.key) {
+        case 'Escape':
           e.target.value = todo.title;
           store.setEditing(todo, false);
           break;
-        case goog.events.KeyCodes.ENTER:
+        case 'Enter':
           this.saveTodo(todo, e.target.value);
           break;
       }

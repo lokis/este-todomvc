@@ -9,8 +9,6 @@ class app.Routes extends este.Routes
     @extends {este.Routes}
   ###
   constructor: ->
-    super()
-
     @allTodos = @route '/'
     @activeTodos = @route '/active'
     @completedTodos = @route '/completed'

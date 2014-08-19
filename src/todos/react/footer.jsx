@@ -9,7 +9,7 @@ goog.require('goog.i18n.pluralRules');
  */
 app.todos.react.Footer = function(store, routes) {
 
-  this.create = React.createClass({
+  this.component = React.createClass({
 
     render: function() {
       var completedLength = store.completed().length;
@@ -26,19 +26,19 @@ app.todos.react.Footer = function(store, routes) {
             <li>
               <a
                 className={this.getClassName(routes.allTodos)}
-                href={routes.allTodos.createUrl()}
+                href={routes.allTodos.url()}
               >All</a>
             </li>
             <li>
               <a
                 className={this.getClassName(routes.activeTodos)}
-                href={routes.activeTodos.createUrl()}
+                href={routes.activeTodos.url()}
               >Active</a>
             </li>
             <li>
               <a
                 className={this.getClassName(routes.completedTodos)}
-                href={routes.completedTodos.createUrl()}
+                href={routes.completedTodos.url()}
               >Completed</a>
             </li>
           </ul>
@@ -53,10 +53,6 @@ app.todos.react.Footer = function(store, routes) {
       );
     },
 
-    /**
-      @param {number} remainingLength
-      @return {string}
-    */
     getItemsLeftLocalized: function(remainingLength) {
       var rule = goog.i18n.pluralRules.select(remainingLength);
       switch(rule) {
@@ -65,7 +61,7 @@ app.todos.react.Footer = function(store, routes) {
         case goog.i18n.pluralRules.Keyword.OTHER:
           return 'items left';
         default:
-          throw new Error('Translation not defined.');
+          throw Error('Translation not defined.');
       }
     },
 

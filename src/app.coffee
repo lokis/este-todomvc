@@ -3,22 +3,21 @@ goog.provide 'App'
 class App
 
   ###*
-    @param {este.Router} router
     @param {app.Routes} routes
+    @param {este.Router} router
     @param {app.todos.react.App} reactApp
     @param {Element} element
+    @param {app.todos.Store} store
     @constructor
   ###
-  constructor: (router, routes, @reactApp, @element) ->
-    routes.addToEste router
-    routes.listen este.Routes.EventType.CHANGE, @syncUi.bind @
-    router.start()
+  constructor: (routes, router, @reactApp, @element, store) ->
 
-  ###*
-    Sync UI with app model.
-  ###
-  syncUi: ->
-    if !@component
-      @component = React.renderComponent @reactApp.create(), @element
-      return
-    @component.forceUpdate()
+    syncUI = ->
+      React.renderComponent reactApp.component(), element
+
+    routes.addToEste router, (route, params) ->
+      routes.setActive route, params
+      syncUI()
+
+    router.start()
+    store.listen 'change', syncUI

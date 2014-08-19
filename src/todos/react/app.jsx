@@ -2,36 +2,24 @@ goog.provide('app.todos.react.App');
 
 /**
  * @param {app.todos.Store} store
- * @param {app.todos.react.Header} reactHeader
- * @param {app.todos.react.Main} reactMain
- * @param {app.todos.react.Footer} reactFooter
+ * @param {app.todos.react.Header} header
+ * @param {app.todos.react.Main} main
+ * @param {app.todos.react.Footer} footer
  * @constructor
  */
-app.todos.react.App = function(store, reactHeader, reactMain, reactFooter) {
-  var Header = reactHeader.create;
-  var Main = reactMain.create;
-  var Footer = reactFooter.create;
+app.todos.react.App = function(store, header, main, footer) {
 
-  this.create = React.createClass({
+  this.component = React.createClass({
     render: function() {
       var atLeastOneTodoExists = !!store.all().length
 
       return (
         <div>
-          <Header />
-          {atLeastOneTodoExists && <Main />}
-          {atLeastOneTodoExists && <Footer />}
+          <header.component />
+          {atLeastOneTodoExists && <main.component />}
+          {atLeastOneTodoExists && <footer.component />}
         </div>
       );
-    },
-
-    componentDidMount: function() {
-      store.listen(app.todos.Store.EventType.CHANGE, this.onStoreChange);
-    },
-
-    onStoreChange: function() {
-      this.forceUpdate();
     }
-
   });
 };

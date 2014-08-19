@@ -10,54 +10,50 @@ goog.require('goog.i18n.pluralRules');
  */
 app.todos.react.Footer = function(store, routes) {
 
-  this.create = React.createClass({displayName: 'create',
+  this.component = React.createClass({displayName: 'component',
 
     render: function() {
       var completedLength = store.completed().length;
       var remainingLength = store.remaining().length;
 
       return (
-        React.DOM.footer( {id:"footer"}, 
-          React.DOM.span( {id:"todo-count"}, 
-            React.DOM.strong(null, remainingLength),
-            ' ',
+        React.DOM.footer({id: "footer"}, 
+          React.DOM.span({id: "todo-count"}, 
+            React.DOM.strong(null, remainingLength), 
+            ' ', 
             this.getItemsLeftLocalized(remainingLength)
-          ),
-          React.DOM.ul( {id:"filters"}, 
+          ), 
+          React.DOM.ul({id: "filters"}, 
             React.DOM.li(null, 
-              React.DOM.a(
-                {className:this.getClassName(routes.allTodos),
-                href:routes.allTodos.createUrl()}
-              , "All")
-            ),
+              React.DOM.a({
+                className: this.getClassName(routes.allTodos), 
+                href: routes.allTodos.url()
+              }, "All")
+            ), 
             React.DOM.li(null, 
-              React.DOM.a(
-                {className:this.getClassName(routes.activeTodos),
-                href:routes.activeTodos.createUrl()}
-              , "Active")
-            ),
+              React.DOM.a({
+                className: this.getClassName(routes.activeTodos), 
+                href: routes.activeTodos.url()
+              }, "Active")
+            ), 
             React.DOM.li(null, 
-              React.DOM.a(
-                {className:this.getClassName(routes.completedTodos),
-                href:routes.completedTodos.createUrl()}
-              , "Completed")
+              React.DOM.a({
+                className: this.getClassName(routes.completedTodos), 
+                href: routes.completedTodos.url()
+              }, "Completed")
             )
-          ),
+          ), 
           
             !!completedLength &&
-            React.DOM.button(
-              {id:"clear-completed",
-              onClick:this.onClearCompletedClick}
-            , "Clear completed (",completedLength,")")
+            React.DOM.button({
+              id: "clear-completed", 
+              onClick: this.onClearCompletedClick
+            }, "Clear completed (", completedLength, ")")
           
         )
       );
     },
 
-    /**
-      @param {number} remainingLength
-      @return {string}
-    */
     getItemsLeftLocalized: function(remainingLength) {
       var rule = goog.i18n.pluralRules.select(remainingLength);
       switch(rule) {
@@ -66,7 +62,7 @@ app.todos.react.Footer = function(store, routes) {
         case goog.i18n.pluralRules.Keyword.OTHER:
           return 'items left';
         default:
-          throw new Error('Translation not defined.');
+          throw Error('Translation not defined.');
       }
     },
 

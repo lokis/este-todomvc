@@ -18,8 +18,8 @@ app.main = (data) ->
     # By default history uses autodetection. We can enforce hashchange.
     by: -> new este.History forceHash: true
 
-  # This method will build whole app for us. No more factories everywhere.
-  # If you are curious what happens, take a look at App class.
+  # This method wires all app classes for us. No more factories everywhere.
+  # And as nice result, the app is modular and classes testable. Check App.
   container.resolveApp()
 
 goog.exportSymbol 'app.main', app.main

@@ -1,15 +1,16 @@
 goog.provide('app.todos.react.Main');
 
 /**
- * @param {app.todos.react.Todo} reactTodo
+ * @param {app.todos.react.Todo} todo
  * @param {app.Routes} routes
  * @param {app.todos.Store} store
  * @constructor
  */
-app.todos.react.Main = function(reactTodo, routes, store) {
-  var Todo = reactTodo.create;
+app.todos.react.Main = function(todo, routes, store) {
 
-  this.create = React.createClass({
+  var Todo = todo.component;
+
+  this.component = React.createClass({
 
     render: function() {
       return (

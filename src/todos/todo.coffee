@@ -11,31 +11,28 @@ class app.todos.Todo
   ###
   constructor: (
       @title = '',
+      # Make it optional, so we can mock randomStringGenerator in unit test.
       randomStringGenerator = goog.string.getRandomString) ->
 
     @id = randomStringGenerator()
 
   ###*
     @type {string}
-    @expose
   ###
   id: ''
 
   ###*
     @type {string}
-    @expose
   ###
   title: ''
 
   ###*
     @type {boolean}
-    @expose
   ###
   completed: false
 
   ###*
     @type {boolean}
-    @expose
   ###
   editing: false
 

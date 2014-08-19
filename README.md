@@ -10,9 +10,9 @@
 ## Learning Este.js
 
 [Este.js](https://github.com/steida/este) is combination of [Google Closure](https://developers.google.com/closure/),
-[Facebook React](reactjs.org), and Este.js [library](https://github.com/steida/este-library) and [dev stack](https://github.com/steida/gulp-este).
+[Facebook React](http://facebook.github.io/react/), and Este.js [library](https://github.com/steida/este-library) and [dev stack](https://github.com/steida/gulp-este).
 Code is written in [CoffeeScript](http://coffeescript.org/), but you can use plain old JavaScript too.
-This example uses [Closure DI container](github.com/steida/closure-dicontainer).
+This example uses [Closure DI container](https://github.com/steida/closure-dicontainer).
 
 Here are some links you may find helpful:
 

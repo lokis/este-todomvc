@@ -24,7 +24,7 @@
   "devDependencies": {
     "coffee-script": "^1.7.1",
     "gulp": "^3.6.2",
-    "gulp-este": "^0.5.2",
+    "gulp-este": "^1.0.1",
     "rimraf": "^2.2.8",
     "run-sequence": "^0.3.6",
     "yargs": "^1.2.1"

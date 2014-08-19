@@ -2,28 +2,29 @@
 goog.provide('app.todos.react.Main');
 
 /**
- * @param {app.todos.react.Todo} reactTodo
+ * @param {app.todos.react.Todo} todo
  * @param {app.Routes} routes
  * @param {app.todos.Store} store
  * @constructor
  */
-app.todos.react.Main = function(reactTodo, routes, store) {
-  var Todo = reactTodo.create;
+app.todos.react.Main = function(todo, routes, store) {
 
-  this.create = React.createClass({displayName: 'create',
+  var Todo = todo.component;
+
+  this.component = React.createClass({displayName: 'component',
 
     render: function() {
       return (
-        React.DOM.section( {id:"main"}, 
-          React.DOM.input(
-            {checked:!store.remaining().length,
-            id:"toggle-all",
-            onChange:this.onToggleAllChange,
-            type:"checkbox"} ),
-          React.DOM.label( {htmlFor:"toggle-all"}, "Mark all as complete"),
-          React.DOM.ul( {id:"todo-list"}, 
+        React.DOM.section({id: "main"}, 
+          React.DOM.input({
+            checked: !store.remaining().length, 
+            id: "toggle-all", 
+            onChange: this.onToggleAllChange, 
+            type: "checkbox"}), 
+          React.DOM.label({htmlFor: "toggle-all"}, "Mark all as complete"), 
+          React.DOM.ul({id: "todo-list"}, 
             this.getTodosFilteredByUrl().map(function(todo) {
-              return Todo( {todo:todo, key:todo.id} );
+              return Todo({todo: todo, key: todo.id});
             })
           )
         )

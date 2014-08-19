@@ -7,7 +7,6 @@ goog.require('este.Routes');
   @extends {este.Routes}
  */
 app.Routes = function() {
-  app.Routes.superClass_.constructor.call(this);
   this.allTodos = this.route('/');
   this.activeTodos = this.route('/active');
   this.completedTodos = this.route('/completed');

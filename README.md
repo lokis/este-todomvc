@@ -29,10 +29,6 @@ Get help from other Este.js users:
 
 Instructions are here: [github.com/steida/este](https://github.com/steida/este).
 
-## Notes
-
-This implementation supports Pointer Events via [Polymer Polyfill](http://www.polymer-project.org/platform/pointer-events.html).
-
 ## Credit
 
 This TodoMVC application was created by [Daniel Steigerwald](http://daniel.steigerwald.cz/).

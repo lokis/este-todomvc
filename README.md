@@ -29,6 +29,10 @@ Get help from other Este.js users:
 
 Instructions are here: [github.com/steida/este](https://github.com/steida/este).
 
+## Notes
+
+I will add Facebook [Flux](https://github.com/facebook/flux) soon.
+
 ## Credit
 
 This TodoMVC application was created by [Daniel Steigerwald](http://daniel.steigerwald.cz/).

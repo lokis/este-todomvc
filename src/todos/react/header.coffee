@@ -10,7 +10,7 @@ class app.todos.react.Header
   constructor: (store) ->
     {header,h1,input} = React.DOM
 
-    @component = React.createClass
+    @component = React.createFactory React.createClass
       render: ->
         header id: 'header',
           h1 {}, 'todos'

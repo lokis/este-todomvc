@@ -7,7 +7,7 @@ goog.provide('app.todos.react.Todo');
  */
 app.todos.react.Todo = function(store) {
 
-  this.component = React.createClass({displayName: 'component',
+  this.component = React.createFactory(React.createClass({
 
     render: function() {
       var todo = this.props.todo;
@@ -105,6 +105,6 @@ app.todos.react.Todo = function(store) {
       store.setEditing(todo, false);
     }
 
-  });
+  }));
 
 };

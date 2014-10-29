@@ -10,7 +10,7 @@ app.todos.react.Main = function(todo, routes, store) {
 
   var Todo = todo.component;
 
-  this.component = React.createClass({
+  this.component = React.createFactory(React.createClass({
 
     render: function() {
       return (
@@ -45,6 +45,6 @@ app.todos.react.Main = function(todo, routes, store) {
       }
     }
 
-  });
+  }));
 
 };

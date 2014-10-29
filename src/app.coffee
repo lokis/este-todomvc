@@ -13,7 +13,7 @@ class App
   constructor: (routes, router, @reactApp, @element, store) ->
 
     syncUI = ->
-      React.renderComponent reactApp.component(), element
+      React.render reactApp.component(), element
 
     routes.addToEste router, (route, params) ->
       routes.setActive route, params

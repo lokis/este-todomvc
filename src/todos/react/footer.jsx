@@ -9,7 +9,7 @@ goog.require('goog.i18n.pluralRules');
  */
 app.todos.react.Footer = function(store, routes) {
 
-  this.component = React.createClass({
+  this.component = React.createFactory(React.createClass({
 
     render: function() {
       var completedLength = store.completed().length;
@@ -73,5 +73,5 @@ app.todos.react.Footer = function(store, routes) {
       store.clearCompleted();
     }
 
-  });
+  }));
 };

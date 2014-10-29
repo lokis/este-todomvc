@@ -10,7 +10,7 @@ goog.provide('app.todos.react.App');
  */
 app.todos.react.App = function(store, header, main, footer) {
 
-  this.component = React.createClass({displayName: 'component',
+  this.component = React.createFactory(React.createClass({
     render: function() {
       var atLeastOneTodoExists = !!store.all().length
 
@@ -22,5 +22,5 @@ app.todos.react.App = function(store, header, main, footer) {
         )
       );
     }
-  });
+  }));
 };
